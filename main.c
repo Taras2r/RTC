@@ -220,3 +220,19 @@ int main (void)
 	PORTB |= 1;
 	return 0;
 }
+
+void send_message_to_UDR(char * message, int integer)
+{
+	char* buff = (char*) malloc((sizeof(int)*8+1));
+	itoa(integer, buff,10);
+	do
+	{
+		printf("%c",*message);//Function to put char to UDR should be here
+	}while(*++message);
+	//while(!*(++buff))
+	do
+	{
+		printf("%c", *buff);//Function to put char to UDR should be here
+	}while(*++buff);
+	//Add commands to run cursor to new line or create new function for this
+}
